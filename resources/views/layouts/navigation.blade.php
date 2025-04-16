@@ -120,6 +120,12 @@
                             </x-dropdown-link>
                         </form>
 
+                        @if (isVcfEnabled())
+                            <x-responsive-nav-link :href="route('download.vcf', auth()->user()->id)">
+                                {{ __('Download (.vcf)') }}
+                            </x-responsive-nav-link>
+                        @endif
+
                         <x-dropdown-link>
                             {{ __('Site Views') }} ({{ $totalViews }})
                         </x-dropdown-link>
@@ -173,6 +179,16 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+
+                @if (isVcfEnabled())
+                    <x-responsive-nav-link :href="route('download.vcf', auth()->user()->id)">
+                        {{ __('Download (.vcf)') }}
+                    </x-responsive-nav-link>
+                @endif
+
+                <x-dropdown-link>
+                    {{ __('Site Views') }} ({{ $totalViews }})
+                </x-dropdown-link>
             </div>
         </div>
     </div>
