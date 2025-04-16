@@ -8,11 +8,12 @@
 </head>
 <body>
 <div class="d-flex">
-    <div class="bg-dark text-white p-3" style="width: 200px; height: 100vh;">
+    <div class="bg-dark text-white p-3 sticky-lg-top" style="width: 200px; height: 100vh;">
         <h4>Admin Panel</h4>
         <ul class="nav flex-column">
             <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link text-white">Dashboard</a></li>
             <li class="nav-item"><a href="{{ route('admin.vcf.settings') }}" class="nav-link text-white">VCF Settings</a></li>
+            <li class="nav-item"><a href="{{ route('admin.about-us.index') }}" class="nav-link text-white">About us</a></li>
             <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link text-white">Logout</a></li>
         </ul>
     </div>
@@ -20,5 +21,6 @@
         @yield('content')
     </div>
 </div>
+@yield('scripts')
 </body>
 </html>
