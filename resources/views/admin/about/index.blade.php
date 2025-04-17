@@ -4,13 +4,6 @@
     <div class="container mt-4">
         <h2 class="mb-4">About Us</h2>
 
-        {{-- Flash messages --}}
-        @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-        @elseif (session('error'))
-            <div class="alert alert-danger">{{ session('error') }}</div>
-        @endif
-
         @if (!$about)
             <a href="{{ route('admin.about-us.create') }}" class="btn btn-primary mb-3">Create New</a>
         @else

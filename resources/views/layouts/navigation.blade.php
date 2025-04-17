@@ -19,20 +19,24 @@
                     About Us
                 </x-nav-link>
 
-                <x-nav-link href="#" class="text-white hover:text-blue-300">
+                <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')" class="text-white hover:text-blue-300">
                     Projects
                 </x-nav-link>
 
-                <x-nav-link href="#" class="text-white hover:text-blue-300">
+                <x-nav-link :href="route('services')" :active="request()->routeIs('services')" class="text-white hover:text-blue-300">
                     Services
                 </x-nav-link>
 
-                <x-nav-link href="#" class="text-white hover:text-blue-300">
+                <x-nav-link :href="route('our_team')" :active="request()->routeIs('our_team')" class="text-white hover:text-blue-300">
                     Our Team
                 </x-nav-link>
 
-                <x-nav-link href="#" class="text-white hover:text-blue-300">
+                <x-nav-link :href="route('contact_us')" :active="request()->routeIs('contact_us')" class="text-white hover:text-blue-300">
                     Contact Us
+                </x-nav-link>
+
+                <x-nav-link :href="route('products')" :active="request()->routeIs('products')" class="text-white hover:text-blue-300">
+                    Products
                 </x-nav-link>
             </div>
 
@@ -97,17 +101,20 @@
             <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
                 {{ __('About Us') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
                 {{ __('Projects') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services')">
                 {{ __('Services') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link :href="route('our_team')" :active="request()->routeIs('our_team')">
                 {{ __('Our Team') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link :href="route('contact_us')" :active="request()->routeIs('contact-us')">
                 {{ __('Contact Us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('products')" :active="request()->routeIs('products')">
+                {{ __('Products') }}
             </x-responsive-nav-link>
         </div>
 

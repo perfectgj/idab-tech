@@ -1,61 +1,170 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🌐 idab-tech Virtual Card System
 
-## About Laravel
+The **idab-tech Virtual Card System** is a Laravel 12-based web platform that allows users and admins to manage and share virtual contact cards (`.vcf` files). This fully responsive system includes a modern front-end with a powerful admin panel to manage dynamic content such as projects, services, products, teams, and more — including a **referral system** and **site view counter**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Framework**: Laravel 12 (latest)
+- **Frontend**: Blade, Tailwind CSS, Bootstrap 5
+- **Database**: MySQL
+- **Authentication**: Laravel Breeze
+- **File Upload**: Laravel Public Disk (`storage`)
+- **Pagination**: Laravel built-in
+- **Tooltips**: Custom HTML/CSS
+- **Icons**: SVG, Font Awesome
+- **View Tracking**: Laravel Counter
+- **Mobile**: Fully Responsive Layout
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Key Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 🔹 General
+- Clean and minimal UI
+- Fully responsive and mobile-friendly
+- Download `.vcf` contact card
+- Site-wide view counter
+- Easy sharing via referral links
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔹 Admin Panel Modules
 
-## Laravel Sponsors
+All modules support:
+- Full **CRUD** functionality
+- **Image upload** (where applicable)
+- **Search**, **pagination**, and **status toggle**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### 📍 About Us
+- Location, total members, opening date
+- Phone, email, and social media links
+- Title & Description section
+- Expandable dropdowns for Vision/Mission with icon + description
 
-### Premium Partners
+#### 🗂️ Projects
+- Title, image, and description
+- Displayed as public project cards
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+#### 🛠️ Services
+- Title, price, image, and tooltip
+- Single-line horizontal style card layout
+- Active/Inactive toggle
 
-## Contributing
+#### 👥 Our Team
+- Name, surname, designation, experience
+- Profile photo and status
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 🧾 Categories & Products
+- Categories with multiple products
+- Products: title, image, price, tooltip, description
+- Grouped view by category
 
-## Code of Conduct
+#### 📬 Contact Us
+- Contact form: name, email, country code + phone, query
+- Social media icons: LinkedIn, Twitter, Instagram, Facebook, YouTube
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### 🎁 Referral System
+- Dashboard with referral stats
+- Share referral via WhatsApp, email, and more
 
-## Security Vulnerabilities
+#### 📊 Site View Counter
+- Tracks and displays unique visits
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 📁 Folder Structure
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+├── app/Models             # Eloquent models
+├── app/Http/Controllers   # All controller logic
+├── resources/views        # Blade templates (frontend + admin)
+├── routes/web.php         # Routes definition
+├── database/migrations    # DB schemas
+├── public/storage         # Uploaded images (linked)
+```
+
+---
+
+## ⚙️ Installation Guide
+
+### 📦 Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/perfectgj/idab-tech.git
+cd idab-tech
+```
+
+### 💻 Step 2: Install Backend & Frontend Dependencies
+
+```bash
+composer install
+npm install
+npm run dev
+```
+
+### ⚙️ Step 3: Setup Environment Variables
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Update your `.env` file with database credentials:
+
+```env
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+### 🧱 Step 4: Run Migrations & Seeder
+
+```bash
+php artisan migrate --seed
+```
+
+### 🔗 Step 5: Link Storage for Public Uploads
+
+```bash
+php artisan storage:link
+```
+
+### ▶️ Step 6: Serve the Application
+
+```bash
+php artisan serve
+```
+
+Visit: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🔐 Admin Access
+
+> **To access the admin panel:**
+
+1. Register a user via frontend
+2. Open your database and update the `users` table → set `is_admin = 1`
+3. Login and visit `/admin/dashboard`
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 💬 Contact
+
+> Developed by the **Girish Jadeja**  
+> For support, feedback, or collaboration, reach out through the Contact Us page or open an issue.
+
+---
+
+## 🌟 Final Words
+
+- Made with ❤️ using **Laravel 12**
+- Lightweight, dynamic, and customizable
+- Easily extend with new features like blog, testimonials, QR card generator, etc.

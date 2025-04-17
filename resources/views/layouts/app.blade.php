@@ -21,6 +21,9 @@
     <!-- intl-tel-input CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <!-- intl-tel-input JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
 
@@ -59,6 +62,35 @@
             {{ $slot }}
         </main>
     </div>
+
+    <!-- intl-tel-input -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+    <script>
+        const phoneInput = document.querySelector("#phone");
+        const countryCodeInput = document.querySelector("#country_code");
+
+        const iti = window.intlTelInput(phoneInput, {
+            separateDialCode: true,
+            preferredCountries: ["in", "us"],
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js",
+        });
+
+        // Function to set the country code in hidden input
+        function updateCountryCode() {
+            const countryCode = iti.getSelectedCountryData().dialCode;
+            countryCodeInput.value = countryCode;
+        }
+
+        // Set on page load
+        updateCountryCode();
+
+        // Update on country change
+        phoneInput.addEventListener("countrychange", updateCountryCode);
+    </script>
+
 </body>
 
 </html>
